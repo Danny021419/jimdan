@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Order Form</title>
+	<link rel="stylesheet" href="7.css">
+</head>
+
+<body bgcolor="lightgreen">
+<kbd><b>
+<center>
+<b>
+	<h1>Welcome To DJ's Motor Parts!
+	<br> Ride the Road!</h1>
+</b></center>
+<br>
+<br>
+<h2>Please fill in the form!</h2>
+<br>
+
+	<form id="order-form">
+	<h2>
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" required><br><br>
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" required><br><br>
+		<label for="phone">Phone</label>
+		<input type="text" id="phone" name="phone" placeholder="Your phone.." required>
+</h2>		<br><br>
+		</table>	<tr>
+<h1><center>		<th> DJ's Product</center></th></h1>
+		<tr>
+		<br>
+		<br>
+		<table>
+		<tr>	
+		<h2>		<td>Motorcycle Full face Helmet</td></h2> <img src="image 1.jpg" width="500px" height="500px"> </td></td>
+		<td> - </td>
+		<h2>		<td>600.00</td></h2>
+		</td></tr>
+		<tr>
+		<tr>
+		<tr>	
+		<h2>		<td>Motorcycle Handle Grip</td></h2> <img src="image 2.jpg" width="500px" height="500px"> </td></td>
+		<td> - </td>
+		<h2>		<td>150.00</td></h2>
+		</td></tr>
+		<tr>
+		<tr>
+	<tr>	
+		<h2>		<td>Motrocycle Headlight</td></h2> <img src="image 3.jpg" width="500px" height="500px"> </td></td>
+		<td> - </td>
+		<h2>		<td>250.00</td></h2>
+		</td></tr>
+		<tr>
+		<tr>
+<h2>		<td>Motorcycle Side Mirror</td></h2> <img src="image 4.jpg.webp" width="500px" height="500px"> </td></td>
+		<td> - </td>
+<h2>		<td>180.00</td></h2>
+		</td></tr>
+		<tr>
+<h2>		<td>Motrocycle Trunk Box Compartment</td></h2> <img src="image 5.jpg" width="500px" height="500px"> </td></td>
+		<td> - </td>
+<h2>		<td>560.00</td></h2>
+		</tr>
+		<tr>
+<h2>		<td>Motorcycle Handlebar</td></h2>  <img src="image 6.jpg.webp" width="500px" height="500px"> </td></td>
+		<td> - </td>
+	<h2>	<td>350.00</td></h2>
+		</tr>
+		<tr>
+<h2>		<td>Motorcycle Chain colored</td></h2><img src="image 7.jpg" width="500px" height="500px"> </td></td>
+		<td> - </td>
+	<h2>	<td>600.00</td></h2>
+		</tr>
+		<tr>
+<h2>		<td>Motorcycle Color Sprocket</td></h2> <img src="image 8.jpg.webp" width="500px" height="500px"> </td></td>
+		<td> - </td>
+<h2>		<td>850.00</td></h2>
+		</tr>
+		<tr>
+	<h2>	<td>Motorcycle Speedometer</td></h2> <img src="image 9.jpg" width="500px" height="500px"> </td></td>
+		<td> - </td>
+	<h2>	<td>250.00</td></h2>
+		</tr>
+		<tr>
+<h2>		<td>Motorcycle Signal Light  </td></h2><img src="image 10.jpg.webp" width="500px" height="500px"> </td></td>
+		<td> - </td>
+<h2>		<td>150.00</td></h2>
+		</tr>
+		</tr>
+		</h2>
+		</tr>
+		</table>
+		<label for="product">Product:</label>
+		<select id="product" name="product" onchange="calculateTotal()" required>
+			<option value="">Select a product</option>
+			<option value="Item 1">Motorcycle Full Face Helmet (600)</option>
+			<option value="Item 2">Motorcycle Handle Grip(150)</option>
+			<option value="Item 3">Motorcycle HeadLight (250)</option>
+			<option value="Item 4">Motorcycle Side Mirror(180)</option>
+			<option value="Item  5">Motorcycle Trunk Box Compartment(560)</option>
+			<option value="Item 6">Motorcycle Handlebar(350)</option>
+			<option value="Item 7">Motrocycle Chain Clored(600)</option>
+			<option value="Item 8"> Motorcycke Color Sprocket(850)</option>
+			<option value="Item  9">Motorcycle Speedometer(250)</option>
+			<option value="Item 10">Motorcycle Signal Light(150)</option>
+		</select><br><br>
+		<label for="quantity">Quantity:</label>
+		<input type="number" id="quantity" name="quantity" min="1" max="100" value="1" onchange="calculateTotal()" required><br><br>
+		<br>
+		<label for="total">Total:</label>
+		<input type="text" id="total" name="total" readonly><br><br>
+		<input type="submit" value="Submit">
+		<input type="reset" value="Reset">
+	</form>
+	</kbd></b>
+	<div id="receipt"></div>
+
+	<script>
+		function calculateTotal() {
+			var product = document.getElementById("product").value;
+			var quantity = document.getElementById("quantity").value;
+			var price;
+			if (product == "Item 1") {
+				price = 330;
+			} else if (product == "Item 2") {
+				price = 180;
+			} else if (product == "Item 3") {
+				price = 350;
+			} else if (product == "Item 4") {
+				price = 230;
+			} else if (product == "Item 5") {
+				price = 120;
+			} else if (product == "Item 6") {
+			price = 270;
+			} else if (product == "Item 7") {
+			price = 270;
+			} else if (product == "Item 8") {
+			price = 190;
+			} else if (product == "Item 9") {
+			price = 150;
+			} else if (product == "Item 10") {
+			price = 250;
+			} else {
+				price = 0;
+			}
+			var total = price * quantity;
+			document.getElementById("total").value = "P" + total.toFixed(2);
+		}
+		calculateTotal();
+
+		document.getElementById("order-form").addEventListener("submit", function(event) {
+			event.preventDefault();
+			var name = document.getElementById("name").value;
+			var email = document.getElementById("email").value;
+			var phone =document.getElementById("phone").value;
+			var product = document.getElementById("product").value;
+			var quantity = document.getElementById("quantity").value;
+			var total = document.getElementById("total").value;
+			
+			var receipt = "<h2>Receipt</h2>";
+			receipt += "<p><strong>Name:</strong> " + name + "</p>";
+			receipt += "<p><strong>Email:</strong> " + email + "</p>";
+			receipt += "<p><strong>Phone:</strong> " + phone + "</p>";
+			receipt += "<p><strong>Product:</strong> " + product + "</p>";
+			receipt += "<p><strong>Quantity:</strong> " + quantity + "</p>";
+			receipt += "<p><strong>Total:</strong> " + total + "</p>";
+
+			document.getElementById("receipt").innerHTML = receipt;
+		});
+		</script>
+		<p>Current Date/Time: <span id="datetime"></span></p>
+		<script>
+		// Display current date and time
+		var datetime = document.getElementById("datetime");
+		setInterval(function() {
+		var now = new Date();
+		var date = now.toLocaleDateString();
+		var time = now.toLocaleTimeString();
+		datetime.innerHTML = date + " " + time;
+		}, 1000);
+	</script>
+</body>
+</html>
